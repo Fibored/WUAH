@@ -7,12 +7,23 @@ _Testeado en Debian 12, pero podria tambien funcionar en ubuntu o derivadas_
 apt update
 apt install sudo dnsutils curl -y
 wget -O wireguard.sh https://get.vpnsetup.net/wg
-sudo bash wireguard.sh --auto
 ```
 
-> colocarle los dns **10.7.0.1** al peer del cliente `/root/client.conf`
+```
+sudo bash wireguard.sh <<ANSWERS
+n
+51820
+Pc2
+7
+10.7.0.1
+y
+ANSWERS
+```
 
- Si se desean mas clientes, relanzar el script , los datos de los clientes se encuentran en  `/root/`
+> colocarle los dns **10.7.0.1** al peer del cliente `/root/Pc2.conf`
+
+Si se desean mas clientes, relanzar el script `sudo bash wireguard.sh` los datos de los clientes se encuentran en  `/root/`
+
 ```
 apt install -y unbound
 nano /etc/unbound/unbound.conf.d/config.conf
@@ -117,3 +128,10 @@ Checa si se encuentra **/** si no ,agrega lo siguiente
 ```
 nameserver 127.0.0.1
 ```
+
+- Checar si hay algun conflicto de puerto
+```
+sudo apt install net-tools
+netstat -ltnp | grep :80
+```
+
