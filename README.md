@@ -99,14 +99,22 @@ remote-control:
 curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -v
 ```
 
+```
+sudo systemctl restart unbound-resolvconf.service
+wget -O root.hints https://www.internic.net/domain/named.root && sudo mv root.hints /var/lib/unbound/
+```
+
+```
+sudo apt-get install resolvconf -y
+```
+
 Ir a la direccion http://IP:3000 para la configuracion
 
-configuralo default dns **127.0.0.1:5335** tipo **Parallel** , cache **0**
+- Ip de acceso selecciona la del vps
+- cambia el puerto a 8081
+- en config dns coloca **127.0.0.1:5335** tipo **Parallel** , cache **0**
+
 ```
-sudo apt-get install resolvconf -y && sudo systemctl restart unbound-resolvconf.service
-
-wget -O root.hints https://www.internic.net/domain/named.root && sudo mv root.hints /var/lib/unbound/
-
 nano /opt/AdGuardHome/AdGuardHome.yaml
 ```
 
@@ -134,4 +142,3 @@ nameserver 127.0.0.1
 sudo apt install net-tools
 netstat -ltnp | grep :80
 ```
-
