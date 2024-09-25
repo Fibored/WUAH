@@ -1,6 +1,8 @@
 ## Instalacion de Wireguard + Unbound * AdGuardHome
 Sistema completo de vpn para acceso remoto , o por ejemplo para acceso a una sola red desde diferentes lugares, agregandole el bloqueador de anuncios por medio de listas con AdGuardHome, usando Unbound para colocar solo los DNS.
 
+_Testeado en Debian 12, pero podria tambien funcionar en ubuntu o derivadas_
+
 ```
 apt update
 apt install sudo dnsutils curl -y
