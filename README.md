@@ -4,16 +4,7 @@ Sistema completo de vpn para acceso remoto , o por ejemplo para acceso a una sol
 _Testeado en Debian 12, pero podria tambien funcionar en ubuntu o derivadas_
 
 ## Por medio del script en automatico
-- Instala wireguard
-- Crea usuario Pc2.conf como cliente wireguard cat /root/Pc2.conf
-- Instala Unbound
-- COnfigura Unbound
-- Instala AdGuardHome , acceso por IP:3000 cambiar el puerto a otro que no sea 80, por ejemplo 8081
-  - Cambiar el puerto a 8081
-  - Ir a Settings > Dns settings , borra todo y agrega los dns **127.0.0.1:5335**
-  - Selecciona **Paralell requests** y dale **Aply**
-  - En **Rate Limit** coloca un cero, y tambien en **Cache size** un 0
-- Instala Resolvconf
+
 ```
 wget https://raw.githubusercontent.com/Fibored/WUAH/refs/heads/main/install.sh
 ```
@@ -21,6 +12,18 @@ wget https://raw.githubusercontent.com/Fibored/WUAH/refs/heads/main/install.sh
 ```
 sudo bash install.sh
 ```
+
+- Instala wireguard
+- Crea usuario Pc2.conf como cliente wireguard cat /root/Pc2.conf
+- Instala Unbound
+- Configura Unbound
+- Instala AdGuardHome , acceso por IP:3000 cambiar el puerto a otro que no sea 80, por ejemplo 8081
+  - Cambiar el puerto a 8081
+  - Ir a Settings > Dns settings , borra todo y agrega los dns **127.0.0.1:5335**
+  - Selecciona **Paralell requests** y dale **Aply**
+  - En **Rate Limit** coloca un cero, y tambien en **Cache size** un 0
+- Instala Resolvconf
+
 ## Instalacion por medio de pasos y comandos.
 
 ```
