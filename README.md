@@ -14,7 +14,13 @@ _Testeado en Debian 12, pero podria tambien funcionar en ubuntu o derivadas_
   - Selecciona **Paralell requests** y dale **Aply**
   - En **Rate Limit** coloca un cero, y tambien en **Cache size** un 0
 - Instala Resolvconf
+```
+wget https://raw.githubusercontent.com/Fibored/WUAH/refs/heads/main/install.sh
+```
 
+```
+sudo bash install.sh
+```
 ## Instalacion por medio de pasos y comandos.
 
 ```
